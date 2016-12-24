@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:800');
+body{
+    margin: 0;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    background-image: url(http://cdn1.bestpsdfreebies.com/wp-content/uploads/2014/05/shards_pattern.jpg);
+    font-family: "Open Sans";
+    font-weight: 800;
+}
+
+#leftmenu{
+    display: inline-block;
+    width: 100px;
+    background-color: #474747;
+    height: 100%;
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-bottom: 10%;
+}
+
+#container{
+    display: inline-block;
+    height:500px;
+    width:500px;
+    position: absolute;
+    margin-left: 350px;
+    overflow: hidden;
+}
+
+.colorbtn{
+    height: 30px;
+    margin-bottom: 10px;
+    border-radius:6px;
+    border:1px solid #3d3d3d;
+    display:inline-block;
+    cursor:pointer;
+    color:#ffffff;
+    padding:6px 24px;
+}
+.pixeldiv {
+    height: 10px;
+    width: 10px;
+    line-height: 0px;
+    display: inline-block;
+}
+.innerpixel{
+    width: 1px;
+    height: 1px;
+    background-color: #fbff00;
+    display: inline-block;
+    line-height: 0;
+}
+.line{
+    line-height: 0;
+}
+p{
+    margin-bottom: 0px;
+}
+
+#clearbtn{
+    margin-top: 35px;
+    width: 100px;
+    font-size: 15px;
+    font-family: "Open Sans";
+}
+select{
+    width: 100px;
+}
+#white{
+    width: 52px;
+}
