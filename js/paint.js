@@ -43,10 +43,11 @@ createColor("grey");
 createColor("purple");
 createColor("green");
 
-var eraser = document.createElement("p");
-eraser.textContent = "Eraser:";
+var eraser = document.createElement("img");
+eraser.src = "./images/eraser.png";
+eraser.id = "white";
+eraser.addEventListener("click", selectColor);
 leftmenu.appendChild(eraser);
-createColor("white");
 
 function selectColor(e){
     selectedColor = e.target.id;
@@ -154,6 +155,19 @@ clearAllBtn.id = "clearbtn";
 clearAllBtn.onclick = clearAll;
 leftmenu.appendChild(clearAllBtn);
 
+var savebtn = document.createElement("button");
+savebtn.textContent = "Save";
+savebtn.id = "save";
+savebtn.classList.add("btn");
+savebtn.onclick = save;
+leftmenu.appendChild(savebtn);
+
+var loadbtn = document.createElement("button");
+loadbtn.textContent = "Load";
+loadbtn.id = "load";
+loadbtn.classList.add("btn");
+loadbtn.onclick = load;
+leftmenu.appendChild(loadbtn);
 
 function colorChange(e){
     if (e.buttons==1){
@@ -182,4 +196,17 @@ function clearAll() {
     while (container.hasChildNodes()){
         container.removeChild(container.lastChild);
     }
+}
+
+function save(){
+    var saveName = prompt("Please name the file:");
+    var canvas = document.getElementById("container");
+    var saveData = canvas.innerHTML;
+    localStorage.setItem(saveName, saveData);
+}
+
+function load(){
+    var loadName = prompt("Please enter the name of your saved file");
+    var canvas = document.getElementById("container");
+    canvas.innerHTML = localStorage.getItem(loadName);
 }
