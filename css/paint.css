@@ -26,18 +26,22 @@ body{
     position: absolute;
     margin-left: 350px;
     overflow: hidden;
+    -webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+    -moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+    box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
 }
 
-.colorbtn{
+.colorbtn {
     height: 30px;
     margin-bottom: 10px;
-    border-radius:6px;
-    border:1px solid #3d3d3d;
-    display:inline-block;
-    cursor:pointer;
-    color:#ffffff;
-    padding:6px 24px;
+    border-radius: 30px;
+    border: 1px solid #3d3d3d;
+    display: inline-block;
+    cursor: pointer;
+    color: #ffffff;
+    padding: 6px 22px;
 }
+
 .pixeldiv {
     height: 10px;
     width: 10px;
@@ -69,4 +73,14 @@ select{
 }
 #white{
     width: 52px;
+}
+
+
+#square{
+    width: 40%;
+    padding: 4px;
+}
+
+#circle{
+    width:44%;
 }

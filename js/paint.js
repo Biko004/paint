@@ -88,14 +88,6 @@ brushsizes.classList.add("brushoptions");
 brushsizes.addEventListener("change", setBrush);
 leftmenu.appendChild(brushsizes);
 
-
-var clearAllBtn = document.createElement("button");
-clearAllBtn.textContent = "CLEAR ALL";
-clearAllBtn.id = "clearbtn";
-// clearAllBtn.addEventListener("click", clearAll);
-clearAllBtn.onclick = clearAll;
-leftmenu.appendChild(clearAllBtn);
-
 function setBrush(e){
     if(e.target.value == "X-Small"){
         brushSize = 2;
@@ -121,6 +113,48 @@ function setBrush(e){
 }
 
 
+
+var shapeTitle = document.createElement("p");
+shapeTitle.textContent = "Shape:";
+leftmenu.appendChild(shapeTitle);
+var borderRadius = 0;
+var shapeDDown = document.createElement("select");
+
+var square = document.createElement("option");
+square.textContent = "Square";
+var circle = document.createElement("option");
+circle.textContent = "Circle";
+
+shapeDDown.appendChild(square);
+shapeDDown.appendChild(circle);
+
+
+
+
+shapeDDown.classList.add("shapes");
+shapeDDown.addEventListener("change", setShape);
+leftmenu.appendChild(shapeDDown);
+
+function setShape(e){
+    if(e.target.value == "Square"){
+        borderRadius = 0;
+    }
+    else if(e.target.value == "Circle"){
+        borderRadius = 30;
+    }
+
+}
+
+
+
+var clearAllBtn = document.createElement("button");
+clearAllBtn.textContent = "CLEAR ALL";
+clearAllBtn.id = "clearbtn";
+// clearAllBtn.addEventListener("click", clearAll);
+clearAllBtn.onclick = clearAll;
+leftmenu.appendChild(clearAllBtn);
+
+
 function colorChange(e){
     if (e.buttons==1){
         var container = document.getElementById("container");
@@ -132,10 +166,13 @@ function colorChange(e){
         newdiv.style.height = brushSize +  "px";
         newdiv.style.display = "inline-block";
         newdiv.style.position = "absolute";
+        newdiv.style.borderRadius = borderRadius + "px";
         newdiv.classList.add("newdiv");
         container.appendChild(newdiv);
     }
 }
+
+
 
 function clearAll() {
 
