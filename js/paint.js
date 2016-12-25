@@ -208,5 +208,14 @@ function save(){
 function load(){
     var loadName = prompt("Please enter the name of your saved file");
     var canvas = document.getElementById("container");
-    canvas.innerHTML = localStorage.getItem(loadName);
+
+
+    var inputName = localStorage.getItem(loadName);
+    if( inputName!=null){
+        canvas.innerHTML = localStorage.getItem(loadName);
+    }
+    else{
+        alert("Not a valid Name, try again");
+        load();
+    }
 }
